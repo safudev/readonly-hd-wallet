@@ -49,7 +49,6 @@ async function main() {
     const mnemonic_phrases = process.env.MNEMONIC
 
     const master_public_key = getMPKFromMnemonic(mnemonic_phrases)
-    console.log(`master_public_key: ${master_public_key}`)
 
     /*
         show single address
@@ -80,6 +79,7 @@ async function main() {
     const filename = process.env.FILENAME
     const extension = process.env.FILEEXT
     fs.writeFileSync(`${filename}.${extension.toLowerCase()}`, JSON.stringify(addresses, null, tabSpace))
+    console.log(`master_public_key: ${master_public_key}`)
 }
 
 main()

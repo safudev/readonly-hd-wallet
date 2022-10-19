@@ -1,4 +1,8 @@
 {
+  "name": "readonly-hd-wallet",
+  "scripts": {
+    "start": "node index.js"
+  },
   "dependencies": {
     "dotenv": "^16.0.3",
     "ethers": "^5.7.1"
