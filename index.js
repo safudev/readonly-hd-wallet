@@ -71,7 +71,15 @@ async function main() {
     const toIndex = process.env.TO_INDEX
     const addresses = getAddressesFromMPK(master_public_key, fromIndex, toIndex)
     console.log(`addresses with fromIndex: ${index}, toIndex: ${toIndex}`)
-    console.log(JSON.stringify(addresses, 0, 2))
+
+    const tabSpace = 2
+    console.log(JSON.stringify(addresses, 0, tabSpace))
+    const fs = require('fs');
+    // const filename = 'addresses'
+    // const extension = 'json'
+    const filename = process.env.FILENAME
+    const extension = process.env.FILEEXT
+    fs.writeFileSync(`${filename}.${extension.toLowerCase()}`, JSON.stringify(addresses, null, tabSpace))
 }
 
 main()
